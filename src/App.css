@@ -1,0 +1,248 @@
+
+.App {
+  text-align: center;
+}
+h1,h2,h3,h4,h5{font-size: 1rem!important;
+}
+.container{
+  width: 70%!important;
+  /* background:"#272532"!important; */
+  /* position: absolute;
+  top: 0;
+    left: 20%; */
+   /* display: flex;
+  flex-direction: row ; */
+} 
+.search_container{
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.searchComp {
+  width: 50%;
+  position: absolute;
+  top: 10px;
+  z-index: 100;
+  left: 24%;
+}
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  width: 100%;
+  background: #f1f1f1;
+  border:white;
+  border-radius: 25px;
+  outline: none;
+}
+
+/* Style the submit button */
+form.example button {
+
+  width: 100%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.movie_box{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:20px;
+  padding-bottom: 100px;
+
+}
+.movie_box img{
+  width:100%;
+  height:200px;
+  object-fit: cover;
+}
+.movie_box h3{
+  text-align: center;
+  font-family: cursive;
+}
+p.message{
+  color:white
+}
+.movie_info{
+  display:flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+
+.rating{
+  color:white
+}
+.blue{
+  color:#53b664;
+}
+.red{
+  color:rgb(228, 228, 11)
+}
+img{
+  cursor: pointer;
+}
+.modal_show{
+  background: rgba(0,0,0,0.9);
+  color: white;
+  position: absolute;
+  top: 2%;
+  width: 70%;
+  height: 500px;
+  transition: transform 1s ease-in;
+  z-index: 999;
+  right: 20%;
+}
+.information_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:10px;
+height:500px;
+}
+.modal_show .information_container img{
+ max-height: 500px!important;
+ object-fit: cover;
+
+}
+.more_information address{
+font-size:20px!important;
+font-weight: 600;
+font-family: 'Titillium Web', sans-serif;
+color:#0b7dda;
+text-transform: capitalize;
+
+}
+.more_information  span{
+  font-size:15px!important;
+  font-family: 'Raleway', sans-serif;
+  color:White;
+  }
+  .more_information h1:first-child {
+    padding-top:20px;
+    font-size:20px!important;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+  }
+  .AddButton{
+    background: #2196F3;
+    width:50px;
+    text-align: center;
+    padding:4px 0 4px 0;
+    font-weight: 600; 
+    position: relative;
+    margin-top:20px;
+    transition: width .5s ease-in;
+    cursor: pointer;
+    margin: 0 auto;
+   
+  }
+
+  .AddButton::after{
+  
+    content:'Add Your Favorite movies';
+position: absolute;
+top:-12px;
+right:-120px;
+font-size:10px;
+display: block;
+width:120px;
+opacity: 0;
+transition: opacity .5s ease-in-out;
+    
+      }
+  .AddButton:hover::after{
+opacity:1;
+
+  }
+
+  .Wish_containr_wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: block;
+    height: auto;
+    z-index: 100;
+}
+  .WishButton{
+    display: flex;
+    z-index: 20;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .WishButton h6:first-of-type{
+    padding-right: 10px;
+        
+}
+   
+    .wishlist{
+    background:rgb(55, 107, 104);
+    overflow-y: scroll;
+    color:white;
+    /* z-index: 20;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color:white;
+    transition: all 0.3s ease-out; */
+
+  }  
+ .wishlist li{
+  list-style: none;
+  border-bottom:2px solid wheat!important;
+  padding:10px;
+  display:flex;
+  
+} 
+
+.wishlist li .fa-trash-alt{
+  font-size:10px;
+  color:red;
+}
+/* .close_button{
+  position: fixed;
+  right: 0;
+  padding: 20px;
+  font-size: 30px;
+} */
+
+
+
+span.close_button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-right: 22px;
+    transform: translateY(4px, -49px);
+}
+
+.backdrop{
+  width:100%;
+  height:100%;
+  position: fixed;
+  z-index: 100;
+  left:0;
+  top:0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+  
