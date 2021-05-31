@@ -9,8 +9,8 @@ function Search(props){
 const[name,setname]=useState('')
 const[number,setnumber]=useState('')
 const [text,settext]=useState('')
-const [movieTitle,setmovieTitle]= useContext(movieState)
-
+const {moviename}= useContext(movieState)
+const [movieTitle, setmovieTitle]=moviename
 
 const searchMovies=(e)=>{
     e.preventDefault();

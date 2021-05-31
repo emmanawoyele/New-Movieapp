@@ -123,6 +123,10 @@ height:500px;
  object-fit: cover;
 
 }
+.more_information {
+ 
+  overflow-x: hidden;
+}
 .more_information address{
 font-size:20px!important;
 font-weight: 600;
@@ -149,6 +153,7 @@ text-transform: capitalize;
     padding:4px 0 4px 0;
     font-weight: 600; 
     position: relative;
+    bottom: 30px;
     margin-top:20px;
     transition: width .5s ease-in;
     cursor: pointer;
@@ -245,4 +250,4 @@ span.close_button {
   background: rgba(0, 0, 0, 0.5);
 }
 
-  
+    
