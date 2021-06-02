@@ -1,29 +1,34 @@
 
 // import React from 'react';
-import React,{useContext,useState,useRef,useEffect} from 'react'
-import ReactDOM from 'react-dom';
+import {useState,useRef, useEffect,useContext} from 'react'
+import {movieState} from './myState/movieState'
 import {Link} from 'react-router-dom';
 import './library/library.css'
-import Icon from '@material-ui/core/Icon';
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import StoreIcon from '@material-ui/icons/Store';
-import Button from '@material-ui/core/Button';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import ViewModuleIcon from '@material-ui/icons/ViewModule';
 import AddAlertIcon from '@material-ui/icons/AddAlert';
 import SearchMovie from './search_Movie_Comp'
-import {movieState} from './myState/movieState'
 
-function Links() {
-    var  b=""
-    const {Favoritename}= useContext(movieState)
+
+function Links(props) {
+    var a= ''
+    const {movieTitle,Favoritename}= useContext(movieState)
     const[Favorite,setFavorite]=Favoritename
+    
+    
+      
+    console.log( Favorite)
+  
+  
     useEffect(() => {
-    //    setFavorite(prevState=>prevState + Favorite)
-    }, )
-   
-    const a = JSON.parse(localStorage.getItem("movies"))
+        a = JSON.parse(localStorage.getItem("movies"))
+
+        setFavorite(a)
+        
+    },[])
+ 
     const leftIcon={
         width:20,
         color:"black",
@@ -31,11 +36,11 @@ function Links() {
         fontSize:30
     }
  
-    if(Favorite !=0){
- b=  <div className="num">
-          <span>{Favorite}</span>
-      </div>
-    }
+//     if(a.length < 0){
+//  b=  <div className="num">
+//           <span>{a.length}</span>
+//       </div>
+//     }
     return (
     <div className="navLinks">
 
@@ -70,7 +75,9 @@ function Links() {
         <li><ViewModuleIcon/></li> 
      
       <li>
-      {b}
+      <div className="num">
+          <span>{Favorite.length}</span>
+      </div>
           <AddAlertIcon/>
               
         

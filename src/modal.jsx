@@ -1,40 +1,38 @@
 import React from 'react'
 import {useState,useRef, useEffect,useContext} from 'react'
 import {movieState} from './myState/movieState'
-import{libraryState} from './myState/libraryState'
-import Backdrop from './backdrop/backdrop'
+import  Link from './links'
 import AddButton from './button.jsx'
 
  function Modal(props) {
     const {movieTitle,Favoritename}= useContext(movieState)
 
 const[Favorite,setFavorite]=Favoritename
-function usePrevious(value) {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-}
-const prevstate =usePrevious(Favorite)
-    // const[myfavourites, setmyfavourites]=useContext(libraryState)
-useEffect(() => {
-   
-}, [])
-
-// const storeMydata=(key, value)=>{
-//   this.setItem(key, JSON.stringify(value));
-//   console.log(key)
+const [a,seta]=useState()
+// function usePrevious(value) {
+//   const ref = useRef();
+//   useEffect(() => {
+//     ref.current = value;
+//   });
+//   return ref.current;
 // }
+// const prevstate =usePrevious(Favorite)
+
+
+
+
 const addMoviesHandler=(movies)=>{
- const addNewMovies = Favorite
-  
-
-// if (a.indexOf(movies) === -1){
-//  const b= a.push(movies);
-//  setFavorite(b)
-//  console.log(a)
-// }
+  const addNewMovies = Favorite
+ console.log(addNewMovies)
+ console.log(movies)
+if(addNewMovies.indexOf(movies) === -1){
+  addNewMovies.push(movies);
+console.log(Favorite)
+var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
+    drophistory.push(movies);
+    setFavorite(drophistory)
+    localStorage.setItem("movies", JSON.stringify(drophistory));
+}
 
   
     // stop  duplicate item to add to my array
@@ -48,20 +46,12 @@ const addMoviesHandler=(movies)=>{
     //     })
     //   }
     
-    if(addNewMovies.includes(movies) === false){
 
-   var b= addNewMovies.push(movies)
-console.log(b)
-      console.log(Favorite)
-     var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
-    drophistory.push(movies);
-    localStorage.setItem("movies", JSON.stringify(drophistory));
-        // const a=  localStorage.setItem("movies",JSON.stringify(addNewMovies)) ;
-//        // var b = [];
-//         // b.push(JSON.parse(localStorage.getItem('movies',addNewMovies)));
-//         // localStorage.setItem('movies', JSON.stringify(addNewMovies));
-      }
+//       }
     }
+    useEffect(() => {
+      
+      },)
     const img_url = 'https://image.tmdb.org/t/p/w1280';
 
 
@@ -88,6 +78,7 @@ console.log(b)
 
    return(
  <div>
+
       {ModalOpener}
   </div>
 

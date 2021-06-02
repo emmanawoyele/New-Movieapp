@@ -1,17 +1,19 @@
-import React,{useContext,useState,useRef,useEffect} from 'react'
+import React,{useContext,useState,useEffect} from 'react'
 import {movieState} from './myState/movieState'
 import Backdrop from './backdrop/backdrop'
-import{LibraryState} from './myState/libraryState'
 import Card from 'react-bootstrap/Card'
 import SearchMovie from './search_Movie_Comp'
 import Modal from './modal'
+import Link from  './links'
 
 
- function Movie_component(props) {
+
+ function Movie_component() {
 
     const img_url = 'https://image.tmdb.org/t/p/w1280';
-     const {moviename}= useContext(movieState)
-     const [movieTitle, setmovieTitle]=moviename
+     const {moviename,Favoritename}= useContext(movieState)
+     const [movieTitle]=moviename
+    
      const[movies,setmovies]=useState([])
      const[show,setshow]=useState(false)
 
@@ -23,16 +25,40 @@ import Modal from './modal'
     //     return ref.current;
     //   }
     //   const prevstate =usePrevious(show)
+
+   
+    useEffect(() => {
+     
+        console.log("1:mount once")
+        
+    },[])
+
+  useEffect(() => {
+     
+      return () => {
+         
+        console.log("2:mount twice")
+      }
+  }, )
+  useEffect(() => {
+     
+   
+      console.log("3:mount thrice")
+    
+}, )
      const openmodalHandler=(movies)=>{
         setmovies(movies)
-           setshow(true)    
+           setshow((prev)=>!prev)    
 
 
 }
+
    const closeModalHanler=()=>{
 setshow(false)
    }
     return (
+        <>
+    
         <div style={{background:"#272532"}} className="container"  >
             <div  className="search_container"  >
     
@@ -51,7 +77,7 @@ setshow(false)
       {movieTitle.filter(m=>m.backdrop_path).map((movies,index)=>{
         
           return<Card key={index}  onClick={()=>openmodalHandler(movies)} >
-              <img src ={img_url+movies.backdrop_path}/>
+              <img src ={img_url+movies.backdrop_path} alt={movies.original_title}/>
               <div className="movie_info">
   <h3>{movies.original_title}</h3>
   <h3 style={{background:"#272532"}}className={movies.vote_average <=8?"blue":"red"}>{movies.vote_average}</h3>
@@ -64,7 +90,9 @@ setshow(false)
 </div>
 
         </div>
+        </>
 
     )
+    
 }
 export default Movie_component

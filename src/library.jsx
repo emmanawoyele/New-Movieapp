@@ -1,20 +1,18 @@
 import React from 'react'
-import SearchMovie from './search_Movie_Comp'
-import {useState, useEffect,useContext} from 'react'
-import {libraryState} from './myState/libraryState'
+import { useEffect,useContext} from 'react'
 import {movieState} from './myState/movieState'
 
 
- function Library(props){
+ function Library(){
 
 
 
   const {Favoritename}= useContext(movieState)
-  const[Favorite,setFavorite]=Favoritename
-  const [moveieLocal, setmovieLocal]=useState([])
+  const[Favorite]=Favoritename
+ 
 
    
- console.log(Favorite)
+
 //   for(var i=0; i<myfavourites.length; i++){
 // console.log(myfavourites)
 //   }
@@ -24,13 +22,13 @@ useEffect(() => {
 }, [])
 
 const a = JSON.parse(localStorage.getItem("movies"))
-console.log(a)
-console.log(Favorite)
+
+
   const img_url = 'https://image.tmdb.org/t/p/w1280';
  const movieslist=a.map((fav)=>{
 
 return <div className="box" key={fav.id} >
-  <img src={img_url + fav.poster_path}></img>
+  <img src={img_url + fav.poster_path} alt={fav.original_title}></img>
   <div className="title">
     <p>{fav.original_title}</p>
     </div>
