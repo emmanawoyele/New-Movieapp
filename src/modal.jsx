@@ -3,11 +3,12 @@ import {useState,useRef, useEffect,useContext} from 'react'
 import {movieState} from './myState/movieState'
 import  Link from './links'
 import AddButton from './button.jsx'
+import { Prev } from 'react-bootstrap/esm/PageItem'
 
  function Modal(props) {
     const {movieTitle,Favoritename}= useContext(movieState)
 
-const[Favorite,setFavorite]=Favoritename
+    const[Favorite,setFavorite]=Favoritename
 const [a,seta]=useState()
 // function usePrevious(value) {
 //   const ref = useRef();
@@ -20,9 +21,9 @@ const [a,seta]=useState()
 
 
 
-
+const addNewMovies = Favorite
 const addMoviesHandler=(movies)=>{
-  const addNewMovies = Favorite
+  console.log(Favorite)
  console.log(addNewMovies)
  console.log(movies)
 if(addNewMovies.indexOf(movies) === -1){

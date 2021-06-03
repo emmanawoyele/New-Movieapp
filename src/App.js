@@ -6,6 +6,7 @@ import Library from './library'
 import {MovieProvider} from './myState/movieState'
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import MyLinks from './links'
+import Backdrop from './backdrop/backdrop'
 
 
 

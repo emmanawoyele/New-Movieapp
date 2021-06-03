@@ -15,7 +15,7 @@ export const MovieProvider =(props)=>{
      .then(response=>{
        const movielist = response.data.results;
      setmovieTitle(movielist)
-    
+      // setFavorite(movielist)
     })
    
     

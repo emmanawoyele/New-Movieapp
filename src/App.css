@@ -247,7 +247,15 @@ span.close_button {
   z-index: 100;
   left:0;
   top:0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
 }
 
+  
+   .num{
+    position: absolute;
+    top: 1px;
+    right: 13px;
+   
+    color: blue;
+   } 
     

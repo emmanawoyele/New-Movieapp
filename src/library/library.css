@@ -65,6 +65,7 @@ form.example input[type=text] {
     position: relative;
     border-radius: 30px;
     /* transform: translate3d(10px, 76px, 10px); */
+    /* transform: translate3d(10px, 160px, 10px); */
 }
 .library_box{
   padding-top: 20px;
@@ -84,6 +85,7 @@ form.example input[type=text] {
     min-height: 500px;
     display: flex;
     margin-top: 2rem;
+    flex-wrap: wrap;
     
   }
   .library_container * >{
@@ -121,4 +123,7 @@ form.example input[type=text] {
      text-align: center;
      display: block;
      color:#f1f1f1
+   }
+   .btnDelete{
+    
    }

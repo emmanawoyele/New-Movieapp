@@ -14,6 +14,7 @@ import SearchMovie from './search_Movie_Comp'
 
 function Links(props) {
     var a= ''
+    var b=""
     const {movieTitle,Favoritename}= useContext(movieState)
     const[Favorite,setFavorite]=Favoritename
     
@@ -36,11 +37,14 @@ function Links(props) {
         fontSize:30
     }
  
-//     if(a.length < 0){
-//  b=  <div className="num">
-//           <span>{a.length}</span>
-//       </div>
-//     }
+    if(a.length !=0){
+ b=  <div className="num">
+          <span>{a.length}</span>
+      </div>
+    }
+// const linknumm =  <div className="num">
+// {/* <span>{Favorite.length}</span> */}
+// </div>
     return (
     <div className="navLinks">
 
@@ -76,8 +80,9 @@ function Links(props) {
      
       <li>
       <div className="num">
-          <span>{Favorite.length}</span>
-      </div>
+<span>{Favorite.length}</span>
+</div>
+     
           <AddAlertIcon/>
               
         
