@@ -6,7 +6,7 @@ export const movieState = createContext()
 export const MovieProvider =(props)=>{
     const[movieTitle, setmovieTitle]=useState([])
     const[Favorite,setFavorite]=useState([])
-    console.log(Favorite)
+
     const[searchmovie,setsearch]=useState([])
     useEffect(() => {
         const api_url = 'https://api.themoviedb.org/3/';   

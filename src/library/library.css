@@ -63,6 +63,7 @@ form.example input[type=text] {
 .container{
   background-color: #ffff;
     position: relative;
+    top: 138px;
     border-radius: 30px;
     /* transform: translate3d(10px, 76px, 10px); */
     /* transform: translate3d(10px, 160px, 10px); */
@@ -72,14 +73,18 @@ form.example input[type=text] {
 }
 
 .library_box .title{
-  font-size:13px;
+  font-size:1.2rem;
+  width:260px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  transform: translate3d(0px, 180px, 10px);
-  position: absolute;
-  top: 80px;
-  margin-top: 9px;
-  padding-bottom: 20px;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
   .library_container{
     min-height: 500px;
@@ -88,7 +93,7 @@ form.example input[type=text] {
     flex-wrap: wrap;
     
   }
-  .library_container * >{
+  .library_container *>{
  width:100%
       }
       .library_container .box{
@@ -112,18 +117,56 @@ form.example input[type=text] {
   
    .num{
     position: absolute;
-    top: -10px;
-    right: -8px;
+    top: -16px;
+    right: -10px;
     background: red;
     width: 30px;
     height: 30px;
     border-radius: 50%;
+
    } 
    .num span{
      text-align: center;
      display: block;
      color:#f1f1f1
    }
-   .btnDelete{
-    
+   .movieContainer{
+     position: relative;
    }
+   .deleteBtn{
+   display: block;
+   background: transparent;
+   transition:all 2s ;
+   opacity: 0
+   }
+   .deletespan{
+    /* transform: translate3d(0,100px,0); */
+    background:red;
+    color:white;
+    position: absolute;
+    top:126px;
+    z-index: 99;
+    width: 97%;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer; 
+    display: block;
+    border:1px solid transparent
+   
+  
+  
+   }
+   
+     .box:hover + .deleteBtn{
+      /* display: block; */
+      opacity: 1
+      
+     }
+
+     @media only screen and (max-width: 600px){
+      .navLinks {
+        justify-content: normal;
+        position: relative;
+    }
+     }
+  

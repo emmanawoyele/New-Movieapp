@@ -48,7 +48,11 @@ import Link from  './links'
 }, )
      const openmodalHandler=(movies)=>{
         setmovies(movies)
-           setshow((prev)=>!prev)    
+        //    setshow((prev)=>!prev) 
+           setshow(function(prev){
+            return !prev;
+            
+          })  
 
 
 }
@@ -61,10 +65,9 @@ setshow(false)
     
         <div style={{background:"#272532"}} className="container"  >
             <div  className="search_container"  >
-    
-                <SearchMovie />
+
             </div>
-            <Modal movieset={movies} show={show} ></Modal>
+            <Modal movieset={movies} show={show}  ></Modal>
             <Backdrop    show={show} closeModalHanler={closeModalHanler}>
                 
                

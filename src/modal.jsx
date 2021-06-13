@@ -10,6 +10,9 @@ import { Prev } from 'react-bootstrap/esm/PageItem'
 
     const[Favorite,setFavorite]=Favoritename
 const [a,seta]=useState()
+useEffect(() => {
+
+}, [])
 // function usePrevious(value) {
 //   const ref = useRef();
 //   useEffect(() => {
@@ -22,18 +25,47 @@ const [a,seta]=useState()
 
 
 const addNewMovies = Favorite
+
+
+
+
 const addMoviesHandler=(movies)=>{
-  console.log(Favorite)
- console.log(addNewMovies)
- console.log(movies)
-if(addNewMovies.indexOf(movies) === -1){
-  addNewMovies.push(movies);
-console.log(Favorite)
-var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
-    drophistory.push(movies);
-    setFavorite(drophistory)
-    localStorage.setItem("movies", JSON.stringify(drophistory));
-}
+console.log(movies)
+// var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
+// if (drophistory.includes(movies) === false){
+//   // addNewMovies.push(movies)
+//   console.log(movies)
+//   // var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
+//   drophistory.push(movies)
+//     setFavorite( drophistory)
+  
+//   localStorage.setItem("movies",JSON.stringify(drophistory) );
+  
+// }
+
+
+  var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
+
+  if(addNewMovies.indexOf(movies)===-1){
+    addNewMovies.push(movies);
+  var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
+      drophistory.push(movies);
+      setFavorite(drophistory)
+      localStorage.setItem("movies", JSON.stringify(drophistory))
+  }
+
+
+  
+  
+
+
+
+
+
+
+
+
+
 
   
     // stop  duplicate item to add to my array
@@ -49,6 +81,7 @@ var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
     
 
 //       }
+
     }
     useEffect(() => {
       
@@ -70,7 +103,7 @@ var drophistory = JSON.parse(localStorage.getItem("movies")) || [];
       Rating:<span>{props.movieset.vote_average}</span> <br/>
            </address>
            {/* <AddButton  onClick={()=>props.HandlerAddMovies(props.title)} MoviesAdd={props.MoviesAdd}/> */}
-           <AddButton  HandlerAddMovies={()=>addMoviesHandler(props.movieset)} movieset={props.movieset} />
+           <AddButton  HandlerAddMovies={()=>addMoviesHandler(props.movieset,props.movieset.poster_path ,props.movieset)} movieset={props.movieset} />
 
        </div>
       

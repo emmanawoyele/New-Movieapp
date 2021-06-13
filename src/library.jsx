@@ -9,20 +9,8 @@ import DeleteIcon from '@material-ui/icons/Delete'
 
 
   const {Favoritename}= useContext(movieState)
-  const[Favorite]=Favoritename
- const handleRemoveMovies=(e)=>{
-
-console.log(e)
-    // let deletemovies= this.state.MoviesAdd.filter((title,id)=>{
-    //   title=title!==e
-    //     return title
-    // }) 
-    // this.setState({
-    //   MoviesAdd:deletemovies,
-    // })
-  
-  
-  }
+  const[Favorite,setFavorite]=Favoritename
+ 
 
   // var items = JSON.parse(localStorage.getItem('movies'));
   // for (var i = 0; i < items.length; i++) {
@@ -45,20 +33,42 @@ useEffect(() => {
 
 }, [])
 
+
 var a = JSON.parse(localStorage.getItem("movies"))
 console.log(a)
+const handleRemoveMovies=(e)=>{
+  var target = e;  
+  console.log(a)   
+   for(var i = 0; i < a.length; i++){ 
+     if (a[i] === target){ 
+    a.splice(i, 1);
+      setFavorite(a)
+      const savedelete=localStorage.setItem("movies", JSON.stringify(a));
+     }}}
+     var movieslist
   const img_url = 'https://image.tmdb.org/t/p/w1280';
- const movieslist=Favorite.map((fav)=>{
-
-return<div>
- <div className="box" key={fav.id} onClick={()=>handleRemoveMovies(fav)} >
-  <img src={img_url + fav.poster_path} alt={fav.original_title}></img>
-</div>
- <div className="title">
- <p>{fav.original_title}</p>
- </div>
- </div>
- })
+  if(a!=undefined){
+   movieslist =a.map((fav)=>{
+      return<div key={fav.id} className="movieContainer">
+       <div className="box" key={fav.id}  >
+        <img src={img_url + fav.poster_path} alt={fav.original_title}></img>
+      </div>
+      <div className='deleteBtn'onClick={()=>handleRemoveMovies(fav)}>
+        <span className="deletespan">Delete</span>
+        </div>
+       <div className="title">
+       {fav.original_title}
+       <span></span>
+       <span></span>
+       <span></span>
+       </div>
+      
+       </div>
+       })
+  }else{
+    return null
+  }
+ 
     return (
         <div className="container">
           <div className="library_box">

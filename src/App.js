@@ -21,7 +21,7 @@ function App() {
       
     
       <Router>
-      <MyLinks/>
+   <MyLinks/>   
    <Switch>
 
    <Route path ="/"  exact component={MovieComponet}/>
